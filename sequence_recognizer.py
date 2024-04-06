@@ -45,9 +45,9 @@ def automata_product_dfa(M, N):
 
     
 def main():
-    print("Linguagens Formais e Automata")
+    print("\n\nLINGUAGENS FORMAIS E AUTOMATA")
     
-    print("\nCriando o autômato M, que reconhece sequências de 8 caracteres.")
+    print("\n\n→Criando o autômato M, que reconhece sequências de 8 caracteres.")
     # Autômato M
     Q_m = {'q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8'}
     sigma_m = {'a', 'A', '#', '1'}
@@ -68,7 +68,7 @@ def main():
     M = DFA(Q_m, sigma_m, delta_m, initialState_m, F_m)
 
     # Autômato N
-    print("\n\nCriando o autômato N, que reconhece sequências que contenham um caracter de cada tipo.")
+    print("\n\n→Criando o autômato N, que reconhece sequências que contenham um caracter de cada tipo.")
     Q_n = {f'q{i}' for i in range(16)}
     sigma_n = {'a', 'A', '#', '1'}
     delta_n = {
@@ -94,80 +94,89 @@ def main():
 
     N = DFA(Q_n, sigma_n, delta_n, initial_state_n, F_n)
 
-    print("\n\nTestando a validade de cada autômato.")
-    print("\nO autômato M é válido: ", M.is_valid(), ".")
-    print("\nO autômato M é válido: ", N.is_valid(), ".")
+    print("\n\n→Testando a validade de cada autômato.")
+    print("O autômato M é válido: ", M.is_valid(), ".")
+    print("O autômato M é válido: ", N.is_valid(), ".")
     
-    print("\n\nTestando entradas em cada um dos autômatos. Entre com o caracter '!' para terminar os testes.")
+    print("\n\n→Testando entradas em cada um dos autômatos. Entre com o caracter '!' para terminar os testes.")
     entrada = ""
     while entrada != "!":
-        entrada = input("Digite uma sequência: ")
+        entrada = input("\nDigite uma sequência: ")
         if entrada != "!":
-            print("\nO autômato M aceita a cadeia ", entrada, ": ", M.accept(categorizar_entrada(entrada)), ".")
-            print("\nO autômato N aceita a cadeia ", entrada, ": ", N.accept(categorizar_entrada(entrada)), ".")
+            print("O autômato M aceita a cadeia ", entrada, ": ", M.accept(categorizar_entrada(entrada)), ".")
+            print("O autômato N aceita a cadeia ", entrada, ": ", N.accept(categorizar_entrada(entrada)), ".")
+        else: 
+            print("Continuando...")
     
-    print("\n\nGerando arquivos de visualização dos autômatos M e N.")
-    M.view(
-        file_name="m",
-        node_attr={'fontsize': '20'},
-        edge_attr={'fontsize': '20pt'}
-    )
-    N.view(
-        file_name="n",
-        node_attr={'fontsize': '20'},
-        edge_attr={'fontsize': '20pt'}
-    )
+    #print("\n\nGerando arquivos de visualização dos autômatos M e N.")
+    #M.view(
+    #    file_name="m",
+    #    node_attr={'fontsize': '20'},
+    #    edge_attr={'fontsize': '20pt'}
+    #)
+    #N.view(
+    #    file_name="n",
+    #    node_attr={'fontsize': '20'},
+    #    edge_attr={'fontsize': '20pt'}
+    #)
     
-    print("\n\nGerando o autômato O, que reconhe cadeia de 8 caracteres e se existem ao menos um caractere de cada tipo.")
+    print("\n\n→Gerando o autômato O, que reconhe cadeia de 8 caracteres e se existem ao menos um caractere de cada tipo.")
     O = automata_product_dfa(M, N)
     
-    print("\n\nTestando a validade do autômato.")
+    print("\n\n→Testando a validade do autômato.")
     print("\nO autômato O é válido: ", O.is_valid(), ".")
     
-    print("\n\nTestando entradas no autômato. Entre com o caracter '!' para terminar os testes.")
+    print("\n\n→Testando entradas no autômato. Entre com o caracter '!' para terminar os testes.")
     entrada = ""
     while entrada != "!":
-        entrada = input("Digite uma sequência: ")
+        entrada = input("\nDigite uma sequência: ")
         if entrada != "!":
-            print("\nO autômato O aceita a cadeia ", entrada, ": ", O.accept(categorizar_entrada(entrada)), ".")
+            print("O autômato O aceita a cadeia ", entrada, ": ", O.accept(categorizar_entrada(entrada)), ".")
+        else: 
+            print("Continuando...")
             
-    print("\n\nGerando arquivo de visualização do autômato O.")
-    O.view(
-        file_name="o",
-        node_attr={'fontsize': '20'},
-        edge_attr={'fontsize': '20pt'}
-    )
+    #print("\n\nGerando arquivo de visualização do autômato O.")
+    #O.view(
+    #    file_name="o",
+    #    node_attr={'fontsize': '20'},
+    #    edge_attr={'fontsize': '20pt'}
+    #)
     
-    print("\n\nConvertendo o autômato O para um NFA, que chamaremos de O_NFA.")
+    print("\n\n→Convertendo o autômato O para um NFA, que chamaremos de O_NFA.")
     O_nfa = O
     O_nfa = O_nfa.get_nfa()
     
-    print("\n\nGerando arquivo de visualização do autômato O_NFA.")
-    O_nfa.view(
-        file_name="o_nfa",
-        node_attr={'fontsize': '20'},
-        edge_attr={'fontsize': '20pt'}
-    )
+    #print("\n\nGerando arquivo de visualização do autômato O_NFA.")
+    #O_nfa.view(
+    #    file_name="o_nfa",
+    #    node_attr={'fontsize': '20'},
+    #    edge_attr={'fontsize': '20pt'}
+    #)
     
-    print("\n\nMinimizando o autômato O_NFA.")
+    print("\n\n→Minimizando o autômato O_NFA.")
     O_nfa = O_nfa.minimize()
     
-    print("\n\nGerando arquivo de visualização do autômato O_NFA minimizado.")
-    O_nfa.view(
-        file_name="o_nfa",
-        node_attr={'fontsize': '20'},
-        edge_attr={'fontsize': '20pt'}
-    )
+    #print("\n\nGerando arquivo de visualização do autômato O_NFA minimizado.")
+    #O_nfa.view(
+    #    file_name="o_nfa",
+    #    node_attr={'fontsize': '20'},
+    #    edge_attr={'fontsize': '20pt'}
+    #)
     
-    print("\n\nConvertendo o autômato O_NFA minimizado para um DFA, que chamaremos de O_minimized.")
+    print("\n\n→Convertendo o autômato O_NFA minimizado para um DFA, que chamaremos de O_minimized.")
     O_minimized = O_nfa.get_dfa()
     
-    print("\n\nTestando a validade do autômato.")
+    print("\n\n→Testando a validade do autômato.")
     print("\nO autômato O_minimized é válido: ", O_minimized.is_valid(), ".")
     
-    print("\n\nTestando entradas no autômato O_minimized. Entre com o caracter '!' para terminar os testes.")
+    print("\n\n→Testando entradas no autômato O_minimized. Entre com o caracter '!' para terminar os testes.")
     entrada = ""
     while entrada != "!":
-        entrada = input("Digite uma sequência: ")
+        entrada = input("\nDigite uma sequência: ")
         if entrada != "!":
-            print("\nO autômato O_minimized aceita a cadeia ", entrada, ": ", O_minimized.accept(categorizar_entrada(entrada)), ".")
+            print("O autômato O_minimized aceita a cadeia ", entrada, ": ", O_minimized.accept(categorizar_entrada(entrada)), ".")
+        else: 
+            print("Continuando...")
+            
+if __name__ == "__main__":
+    main()
