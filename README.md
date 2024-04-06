@@ -28,4 +28,10 @@ Para utilizar o validador de senha, você tem duas opções:
      ```
    - Siga as instruções exibidas na tela para testar a validação de senhas.
 
-Essas são as maneiras de testar e validar o funcionamento do autômato finito desenvolvido para a validação de senhas. Escolha o método que melhor se adapta às suas necessidades.
+## Integrantes do Grupo
+
+| Nome                               | RA            | Email                                  |
+|------------------------------------|---------------|----------------------------------------|
+| Gabriel Sponda Freitas Bettarello  | 11201932580   | sponda.gabriel@aluno.ufabc.edu.br      |
+| Vithório da Cunha Marques          | 11201920812   | vithorio.marques@aluno.ufabc.edu.br    |
+| Matheus Cardoso da Silva           | -             | -                                      |
