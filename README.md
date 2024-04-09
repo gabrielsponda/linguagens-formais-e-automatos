@@ -34,4 +34,4 @@ Para utilizar o validador de senha, você tem duas opções:
 |------------------------------------|---------------|----------------------------------------|
 | Gabriel Sponda Freitas Bettarello  | 11201932580   | sponda.gabriel@aluno.ufabc.edu.br      |
 | Vithório da Cunha Marques          | 11201920812   | vithorio.marques@aluno.ufabc.edu.br    |
-| Matheus Cardoso da Silva           | -             | -                                      |
+| Matheus Cardoso da Silva           | 11201822485   | cardoso.matheus@aluno.ufabc.edu.br     |
